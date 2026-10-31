@@ -172,12 +172,89 @@ body.loading{overflow:hidden}
 @media(max-width:720px){.head{flex-direction:column;align-items:flex-start}.acct{width:100%;justify-content:space-between}.cats,.ac{grid-template-columns:1fr 1fr}.info{grid-template-columns:1fr}.side{grid-template-columns:1fr}}
 @media(max-width:560px){.card{padding:17px}.al{flex-direction:column}.ab{width:100%}.res{grid-template-columns:1fr}.sb{flex:1}}
 @media(prefers-reduced-motion:reduce){*,::before,::after{animation-duration:.001ms!important;animation-iteration-count:1!important;animation-delay:0s!important;transition-duration:.001ms!important}.reveal{opacity:1;transform:none}}
+.opts{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:14px}
+.chip{display:flex;align-items:center;gap:7px;padding:8px 12px;background:#09090b;border:1px solid var(--line);border-radius:10px;font-size:12px;cursor:pointer;user-select:none}
+.chip input{accent-color:var(--gold)}
+.tools{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}.tools[hidden]{display:none}
+.list{display:grid;gap:8px;max-height:260px;overflow:auto}
+.li{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:9px 12px;background:#09090b;border:1px solid #212125;border-radius:10px;font:700 13px "JetBrains Mono",ui-monospace,monospace}
+.li>span{overflow:hidden;text-overflow:ellipsis}.li .ra{flex:none}
+.empty{color:var(--mute);font-size:12px}
+.sw{display:flex;gap:10px;margin-bottom:12px}.sw i{width:24px;height:24px;border-radius:50%;border:2px solid #fff3;cursor:pointer;transition:transform .2s}.sw i:hover{transform:scale(1.2)}
+details{padding:12px 0;border-bottom:1px solid #1d1d21}details:last-child{border:0}summary{cursor:pointer;font-weight:500}details p{margin-top:8px;color:var(--mute);font-size:13px}
+#up{position:fixed;right:18px;bottom:18px;z-index:60;width:42px;height:42px;border-radius:50%;border:1px solid var(--line);background:#151518;opacity:0;pointer-events:none;transition:opacity .3s,transform .2s}
+#up.show{opacity:1;pointer-events:auto}#up:hover{transform:translateY(-3px)}
+.sb.fav{color:var(--gold)}
+#prog{position:fixed;top:0;left:0;width:100%;height:3px;z-index:2500;transform-origin:0 50%;transform:scaleX(var(--p,0));background:linear-gradient(90deg,var(--gold),#fff);box-shadow:0 0 12px var(--gold)}
+.orb{translate:calc(var(--px,0)*-60px) calc(var(--py,0)*-60px);transition:translate .8s ease-out}
+.mag{transition:translate .12s,transform .2s,box-shadow .3s}
+.wave{position:fixed;width:12px;height:12px;margin:-6px;border:2px solid var(--gold);border-radius:50%;pointer-events:none;z-index:2600;animation:wv .7s ease-out forwards}
+@keyframes wv{to{transform:scale(7);opacity:0}}
+.logo.spin{animation:sp .8s cubic-bezier(.2,.9,.3,1.3)}@keyframes sp{to{transform:rotate(360deg) scale(1.15)}}
+.ra .tag{align-self:center}
+#pOut .li,#fList .li{animation:rin .45s cubic-bezier(.2,.8,.2,1) both}
+details[open] p{animation:pop .35s both}
+.rl{padding:26px 10px;text-align:center;font:700 clamp(34px,8vw,56px) "JetBrains Mono",ui-monospace,monospace;letter-spacing:6px;background:#030304;border:1px solid var(--line);border-radius:16px;overflow:hidden;text-shadow:0 0 24px #ffffff22}
+.rl.hit{animation:hit .9s}@keyframes hit{30%{transform:scale(1.12);color:var(--gold);text-shadow:0 0 40px var(--gold)}}
+html.party{animation:hue 6s linear infinite}@keyframes hue{to{filter:hue-rotate(360deg)}}
+@media(min-width:721px){body{font-size:16px}.app{width:min(1640px,100% - 56px);padding-top:30px}.card,.head{padding:34px}.head{padding:18px 30px}h1{font-size:40px}.logo{width:64px;height:64px;font-size:30px}.ct{margin-bottom:24px}.ct h2{font-size:26px}.cn{font-size:42px}.cat{min-height:180px;padding:22px}.ci{font-size:14px}.gi strong{font-size:18px}.gi p,.info span,.info li,.role span,.cd small,.stat small{font-size:14px}.go{height:68px;font-size:16px}.nm{font-size:26px}.sb{height:40px;font-size:14px;padding:0 16px}.info strong,.role b{font-size:16px}.stat strong{font-size:30px}.ai,.ab{height:54px}.li{font-size:16px}.nav a{font-size:15px}.layout{gap:28px}main,.side{gap:28px}}
+.ct h2{background:linear-gradient(100deg,#fff 40%,var(--gold) 50%,#fff 60%);background-size:250% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shine 6s linear infinite}
+.card.reveal.in:hover{transform:translateY(-4px)}
+.hero{padding-top:44px}.eyebrow{color:var(--gold);font-weight:700;letter-spacing:3px;font-size:12px;text-transform:uppercase}
+.hl{margin-top:12px;font-size:clamp(34px,6vw,68px);letter-spacing:-2px;line-height:1.02;background:none;color:var(--ink);animation:none;-webkit-text-fill-color:var(--ink)}
+#hw{display:inline-block;background:linear-gradient(100deg,var(--gold),#fff,var(--gold));background-size:250% 100%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:shine 4s linear infinite;transition:opacity .35s,transform .35s}
+#hw.out{opacity:0;transform:translateY(12px)}
+.hp{max-width:62ch;margin:16px 0 24px;color:var(--mute);font-size:16px}
+.hero .tools{gap:12px;margin:0}.hero .go{width:auto;margin:0;padding:0 30px}
+.mq{overflow:hidden;margin-top:28px;-webkit-mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent)}
+.mt{display:flex;gap:12px;width:max-content;animation:mqv 30s linear infinite}.mt span{padding:9px 18px;border:1px solid var(--line);border-radius:999px;background:#09090b;font:700 15px "JetBrains Mono",ui-monospace,monospace}
+@keyframes mqv{to{transform:translateX(-50%)}}
+.kp{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:26px}.kp div{padding:18px;background:#09090b;border:1px solid #212125;border-radius:14px}.kp b{font-size:34px;letter-spacing:-1px}.kp small{display:block;color:var(--mute)}
+.tl div{position:relative;padding:0 0 18px 24px;border-left:1px solid var(--line);margin-left:5px}.tl div:last-child{border:0;padding-bottom:0}
+.tl div::before{content:"";position:absolute;left:-5px;top:4px;width:9px;height:9px;border-radius:50%;background:var(--gold);box-shadow:0 0 12px var(--gold)}
+.tl b{display:block;font-size:14px}.tl span{color:var(--mute);font-size:13px}
+#cur{position:fixed;left:0;top:0;width:34px;height:34px;margin:-17px;border:1.5px solid var(--gold);border-radius:50%;pointer-events:none;z-index:2700;opacity:0;transition:width .2s,height .2s,margin .2s,background .2s}
+body.hov #cur{width:58px;height:58px;margin:-29px;background:#ffffff0d}
+.lm{width:96px;height:96px;font-size:42px;border-radius:26px}.lm.ring::before{inset:-9px;border-radius:34px}
+.lm::after{content:"";position:absolute;inset:-26px;border-radius:50%;border:1px dashed #ffffff33;animation:rot360 7s linear infinite}
+@keyframes rot360{to{transform:rotate(360deg)}}
+.lw{display:flex;gap:10px;font:700 30px "JetBrains Mono",ui-monospace,monospace}.lw span{animation:lt .6s cubic-bezier(.2,.9,.3,1.3) both calc(var(--i)*140ms + .2s)}
+@keyframes lt{from{opacity:0;transform:translateY(24px) scale(.6)}}
+.lb{width:min(280px,70vw);height:4px}.lb i{animation:none;transform:none;width:var(--w,0%);transition:width .1s}
+.lr{display:flex;justify-content:space-between;width:min(280px,70vw);color:var(--mute);font-size:12px}.lr b{color:var(--ink)}
+.ss{position:absolute;top:var(--t);left:var(--l);width:130px;height:1px;background:linear-gradient(90deg,#fff,transparent);opacity:0;animation:shoot var(--d) linear infinite var(--w)}
+@keyframes shoot{0%{opacity:0;transform:translate(0,0) rotate(25deg)}5%{opacity:.9}30%,100%{opacity:0;transform:translate(520px,240px) rotate(25deg)}}
+.plans{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.plan{position:relative;padding:28px;border:1px solid var(--line);border-radius:18px;background:#09090b}
+.plan.pr{border-color:#ffc40066;background:linear-gradient(145deg,#1a1507,#09090b);box-shadow:0 0 50px #ffc40014;animation:glow 3s ease-in-out infinite alternate}
+@keyframes glow{to{box-shadow:0 0 80px #ffc40033}}
+.plan h3{font-size:18px}.price{margin-top:8px;font-size:52px;font-weight:700;letter-spacing:-2px}.price small{font-size:14px;color:var(--mute);font-weight:400;letter-spacing:0}
+.plan ul{margin:16px 0 22px 18px;color:var(--mute);line-height:1.9}.plan li::marker{color:var(--gold)}
+.plan .go{margin:0}.ribbon{position:absolute;top:18px;right:18px}
+.cmp{margin-top:22px}.cmp div{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:10px;padding:12px 4px;border-bottom:1px solid #1d1d21;font-size:14px}
+.cmp div:first-child{color:var(--mute);font-size:12px;text-transform:uppercase;letter-spacing:1px}.cmp div:last-child{border:0}.cmp span:not(:first-child){text-align:center}
+.cmp .y{color:var(--green)}.cmp .n{color:#666}
+.fld{display:grid;gap:12px}.fld label{color:var(--mute);font-size:13px}
+.met{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:14px}.met div{padding:12px;background:#09090b;border:1px solid #212125;border-radius:11px}
+.met small{display:block;color:var(--mute);font-size:11px}.met b{font-size:18px}
+.sc{height:8px;margin-top:14px;border-radius:8px;background:#1c1c20;overflow:hidden}.sc i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--red),var(--gold),var(--green));transition:width .6s cubic-bezier(.2,.8,.2,1)}
+input[type=range]{width:100%;accent-color:var(--gold)}
+.ach-g{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.ach{padding:12px;border:1px solid #212125;border-radius:11px;background:#09090b;color:var(--mute);font-size:13px;filter:grayscale(1);opacity:.55;transition:all .5s}
+.ach.on{color:var(--ink);border-color:#ffc40055;filter:none;opacity:1;animation:pop .6s}
+.ft{display:grid;grid-template-columns:2fr 1fr 1fr;gap:30px;text-align:left}.ft p{color:#6f6f78;margin-top:8px;max-width:44ch}.ft h4{color:var(--ink);font-size:13px;margin-bottom:10px}.ft a{display:block;color:var(--mute);text-decoration:none;margin-bottom:6px;transition:color .2s}.ft a:hover{color:var(--gold)}
+.ftb{margin-top:26px;padding-top:18px;border-top:1px solid #1d1d21}
+@media(max-width:720px){.plans,.ft{grid-template-columns:1fr}.met{grid-template-columns:1fr 1fr}}
+.cmp div{grid-template-columns:1.5fr 1fr 1fr 1fr}
+@media(min-width:721px){.plans{grid-template-columns:repeat(3,1fr)}}
 </style>
 </head>
 <body class="loading">
-<div id="loader" aria-hidden="true"><div class="ld"><div class="lm ring">R</div><div class="lb"><i></i></div></div></div>
+<div id="loader" aria-hidden="true"><div class="ld"><div class="lm ring">R</div><div class="lw" id="lw"></div><div class="lb"><i id="lbi"></i></div><div class="lr"><span id="lmsg">Iniciando</span><b id="lpc">0%</b></div></div></div>
+<i id="prog"></i>
 <canvas id="fx"></canvas>
-<div class="bg"><i class="orb o1"></i><i class="orb o2"></i><i class="orb o3"></i><i class="grid"></i></div>
+<i id="cur"></i>
+<div class="bg"><i class="orb o1"></i><i class="orb o2"></i><i class="orb o3"></i><i class="grid"></i><i class="ss" style="--t:8%;--l:10%;--d:7s;--w:1s"></i><i class="ss" style="--t:20%;--l:45%;--d:9s;--w:4s"></i><i class="ss" style="--t:5%;--l:70%;--d:11s;--w:7s"></i></div>
 <div id="toasts"></div>
 
 <div class="app">
@@ -186,18 +263,89 @@ body.loading{overflow:hidden}
     <div class="logo ring">R</div>
     <div><h1>Rotwm</h1><p class="tag-line" id="tl"></p></div>
   </div>
-  <nav class="nav"><a href="#info">Información</a><a href="#contrataciones">Contrataciones</a></nav>
+  <nav class="nav"><a href="#patron">Patrón</a><a href="#premium">Premium</a><a href="#info">Información</a><a href="#faq">FAQ</a><a href="#contrataciones">Contrataciones</a></nav>
   <div class="acct"><span id="hUser">User</span><span class="badge" id="hRank">USER</span></div>
 </header>
 
 <div class="layout">
 <main>
+  <section class="card spot reveal hero ring" id="inicio">
+    <p class="eyebrow">Generador de usernames</p>
+    <h2 class="hl">Usernames <span id="hw">cortos</span><br>en un instante</h2>
+    <p class="hp">Genera nombres de 2 a 5 caracteres al azar, guarda tus favoritos, crea patrones propios y desbloquea las categorías 3C y 2C con Premium. Todo gratis y sin registrarte.</p>
+    <div class="tools"><button class="go" id="hGo" type="button">Empezar a generar</button><button class="ab" id="hRl" type="button">Ver Premium</button></div>
+    <div class="mq"><div class="mt" id="mt"></div></div>
+    <div class="kp"><div><b><span id="k1">0</span> M</b><small>combinaciones en 5C</small></div><div><b id="k2">0</b><small>categorías</small></div><div><b><span id="k3">0</span>%</b><small>gratis y sin registro</small></div></div>
+  </section>
   <section class="card spot reveal">
     <div class="ct"><h2>Generador de usernames</h2><span id="sel">5C</span></div>
     <div class="cats" id="cats"></div>
     <div class="gi"><strong id="gt"></strong><p id="gd"></p></div>
+    <div class="opts" id="opts"><label class="chip"><input type="checkbox" data-o="l">Letras</label><label class="chip"><input type="checkbox" data-o="n">Números</label><label class="chip"><input type="checkbox" data-o="s">. y _</label><span class="empty">Atajos: G generar · 1–4 categoría</span></div>
     <button class="go" id="go" type="button"><span id="gl">Generar usernames</span></button>
     <div class="results" id="res"></div>
+    <div class="tools" id="tools" hidden><button class="sb" id="cpAll" type="button">Copiar todos</button><button class="sb" id="dlAll" type="button">Descargar .txt</button></div>
+  </section>
+
+  <section class="card spot reveal" id="patron">
+    <div class="ct"><h2>Generador por patrón</h2><span>Personalizado</span></div>
+    <div class="al"><div class="aw"><input class="ai" id="pIn" style="padding-right:14px" placeholder="Ej: cvcv, ccvd, x_x_x" maxlength="12" autocomplete="off" spellcheck="false"></div><button class="ab" id="pGo" type="button">Generar</button></div>
+    <p class="aw2">c = consonante · v = vocal · d = dígito · l = letra · x = cualquiera. Lo demás se queda igual. Patrones de menos de 4 caracteres requieren Premium.</p>
+    <div class="list" id="pOut"></div>
+  </section>
+
+  <section class="card spot reveal" id="premium">
+    <div class="ct"><h2>Planes</h2><span id="plS">Gratis</span></div>
+    <div class="plans">
+      <div class="plan"><h3>Gratis</h3><div class="price">0<small> USD</small></div>
+        <ul><li>Categorías 5C y 4C</li><li>Espera de 15 y 30 minutos</li><li>Patrones de 4 o más caracteres</li><li>Historial y favoritos</li></ul>
+        <button class="go" type="button" disabled style="background:#222;color:#aaa">Plan actual</button></div>
+      <div class="plan"><h3>Premium 3 días</h3><div class="price">0.49<small> USD</small></div>
+        <ul><li>Categorías 3C y 2C durante 3 días</li><li>Sin tiempos de espera</li><li>Patrones de 2 y 3 caracteres</li><li>Ideal para probar</li></ul>
+        <button class="go prem" id="buy3" type="button">Comprar 3 días</button></div>
+      <div class="plan pr"><span class="badge ribbon">MEJOR VALOR</span><h3>Premium permanente</h3><div class="price">1.99<small> USD</small></div>
+        <ul><li>Todo lo del plan Gratis</li><li>Categorías 3C y 2C para siempre</li><li>Sin tiempos de espera en 3C y 2C</li><li>Patrones de 2 y 3 caracteres</li></ul>
+        <button class="go prem" id="buy" type="button">Comprar permanente</button></div>
+    </div>
+    <div class="cmp"><div><span>Característica</span><span>Gratis</span><span>3 días</span><span>Permanente</span></div>
+      <div><span>Categorías 5C y 4C</span><span class="y">Sí</span><span class="y">Sí</span><span class="y">Sí</span></div>
+      <div><span>Categorías 3C y 2C</span><span class="n">No</span><span class="y">Sí</span><span class="y">Sí</span></div>
+      <div><span>Patrones cortos</span><span class="n">No</span><span class="y">Sí</span><span class="y">Sí</span></div>
+      <div><span>Duración</span><span>Siempre</span><span>3 días</span><span>Para siempre</span></div>
+      <div><span>Precio</span><span>0 USD</span><span>0.49 USD</span><span>1.99 USD</span></div>
+    </div>
+  </section>
+
+  <section class="card spot reveal" id="analiza">
+    <div class="ct"><h2>Analizador de username</h2><span>Rareza y detalles</span></div>
+    <div class="fld"><input class="ai" id="aIn" style="padding-right:14px" placeholder="Escribe un username para analizarlo" maxlength="16" autocomplete="off" spellcheck="false">
+    <div class="met"><div><small>Longitud</small><b id="m1">0</b></div><div><small>Categoría</small><b id="m2">-</b></div><div><small>Tipo</small><b id="m3">-</b></div><div><small>Letras</small><b id="m4">0</b></div><div><small>Números</small><b id="m5">0</b></div><div><small>Símbolos</small><b id="m6">0</b></div></div>
+    <div><small class="empty">Puntuación de rareza: <b id="m7">0</b>/100</small><div class="sc"><i id="m8"></i></div></div></div>
+  </section>
+
+  <section class="card spot reveal" id="vars">
+    <div class="ct"><h2>Variaciones</h2><span>Un nombre, muchas formas</span></div>
+    <input class="ai" id="vIn" style="padding-right:14px" placeholder="Escribe una palabra, por ejemplo: rotwm" maxlength="14" autocomplete="off" spellcheck="false">
+    <div class="list" id="vOut" style="margin-top:14px"></div>
+  </section>
+
+  <section class="card spot reveal" id="pass">
+    <div class="ct"><h2>Generador de contraseñas</h2><span id="pwL">16 caracteres</span></div>
+    <div class="fld"><input type="range" id="pwR" min="8" max="32" value="16"><label class="chip" style="width:max-content"><input type="checkbox" id="pwS" checked>Incluir símbolos</label>
+    <div class="li"><span id="pwO" style="word-break:break-all"></span><div class="ra"><button class="sb" id="pwG" type="button">Nueva</button><button class="sb" id="pwC" type="button">Copiar</button></div></div>
+    <div><small class="empty">Seguridad: <b id="pwT">-</b></small><div class="sc"><i id="pwB"></i></div></div></div>
+  </section>
+
+  <section class="card spot reveal" id="caract">
+    <div class="ct"><h2>Características</h2><span>Todo en un solo lugar</span></div>
+    <div class="info">
+      <div><strong>01 · Generación instantánea</strong><span>Resultados en menos de un segundo, con revelado letra por letra.</span></div>
+      <div><strong>02 · Control de caracteres</strong><span>Elige si quieres letras, números, puntos y guiones bajos.</span></div>
+      <div><strong>03 · Patrones propios</strong><span>Diseña la forma exacta del username con comodines.</span></div>
+      <div><strong>04 · Favoritos e historial</strong><span>Guarda lo que te guste y descarga tus listas en texto.</span></div>
+      <div><strong>05 · Premium</strong><span>Desbloquea 3C y 2C sin esperas desde 0.49 USD.</span></div>
+      <div><strong>06 · Personalización</strong><span>Cinco colores de acento, modo fiesta y sonidos opcionales.</span></div>
+    </div>
   </section>
 
   <section class="card spot reveal" id="info">
@@ -205,11 +353,22 @@ body.loading{overflow:hidden}
     <div class="info">
       <div><strong>¿De qué trata?</strong><span>Rotwm es un generador de usernames cortos, de 2 a 5 caracteres, creados al azar con letras, números, puntos y guiones bajos.</span></div>
       <div><strong>Propósito</strong><span>Darte ideas de nombres cortos para tus perfiles de forma rápida y sin necesidad de registrarte.</span></div>
-      <div><strong>Qué ofrece</strong><ul><li>5C y 4C gratis, con tiempo de espera.</li><li>3C y 2C reservadas para accesos Premium.</li><li>Revelar y copiar cada username.</li><li>Control de esperas y estadísticas.</li></ul></div>
+      <div><strong>Qué ofrece</strong><ul><li>5C y 4C gratis, con tiempo de espera.</li><li>3C y 2C reservadas para accesos Premium.</li><li>Revelar y copiar cada username.</li><li>Control de esperas y estadísticas.</li><li>Opciones de caracteres, patrones, historial y favoritos.</li></ul></div>
       <div><strong>Cómo usarla</strong><ol><li>Elige una categoría.</li><li>Pulsa «Generar usernames».</li><li>Revela el resultado.</li><li>Cópialo con un clic.</li></ol></div>
       <div><strong>Beneficios</strong><span>Resultados al instante y una interfaz sencilla. Tus esperas y estadísticas se guardan en tu navegador.</span></div>
       <div><strong>Ten en cuenta</strong><span>Los usernames son aleatorios y no se comprueba si están disponibles en cada plataforma. Verifícalo al registrarlos.</span></div>
     </div>
+  </section>
+
+  <section class="card spot reveal" id="faq">
+    <div class="ct"><h2>Preguntas frecuentes</h2><span>FAQ</span></div>
+    <details><summary>¿Qué significan 5C, 4C, 3C y 2C?</summary><p>El número de caracteres del username: 5C genera nombres de 5 caracteres, 4C de 4, y así sucesivamente.</p></details>
+    <details><summary>¿Los usernames están disponibles?</summary><p>No se comprueba. Verifica la disponibilidad al registrarlos en cada plataforma.</p></details>
+    <details><summary>¿Dónde se guardan mis datos?</summary><p>Solo en tu navegador. Puedes borrar historial, favoritos y estadísticas desde «Personalizar».</p></details>
+    <details><summary>¿Cómo funcionan los patrones?</summary><p>Escribe, por ejemplo, «cvcv» para alternar consonante y vocal, o «ccvd» para dos consonantes, una vocal y un número.</p></details>
+    <details><summary>¿Cuánto cuesta Premium?</summary><p>Hay dos planes: Premium de 3 días por 0.49 USD y Premium permanente por 1.99 USD. Ambos desbloquean 3C y 2C, sin esperas.</p></details>
+    <details><summary>¿Cómo pago y activo Premium?</summary><p>Pulsa «Comprar Premium», escríbeme por Discord, realiza el pago y recibirás un código para activarlo.</p></details>
+    <details><summary>¿Puedo guardar una copia de mis datos?</summary><p>Sí. En «Personalizar» puedes exportar e importar tu historial, favoritos y ajustes.</p></details>
   </section>
 
   <section class="card spot reveal" id="contrataciones">
@@ -272,19 +431,64 @@ body.loading{overflow:hidden}
       <div class="stat"><small>Sesiones</small><strong id="sS">0</strong></div>
       <div class="stat"><small>5C</small><strong id="s5">0</strong></div>
       <div class="stat"><small>4C</small><strong id="s4">0</strong></div>
+      <div class="stat"><small>Favoritos</small><strong id="sF">0</strong></div>
+      <div class="stat"><small>Tiempo aquí</small><strong id="sT">00:00</strong></div>
     </div>
+  </section>
+  <section class="card spot reveal">
+    <div class="ct"><h2>Favoritos</h2><span>Guardados</span></div>
+    <div class="list" id="fList"></div>
+  </section>
+  <section class="card spot reveal">
+    <div class="ct"><h2>Historial</h2><span>Últimos 50</span></div>
+    <div class="list" id="hList"></div>
+    <div class="tools"><button class="sb" id="dlHist" type="button">Descargar</button><button class="sb" id="clHist" type="button">Vaciar</button></div>
+  </section>
+  <section class="card spot reveal">
+    <div class="ct"><h2>Personalizar</h2><span>Color de acento</span></div>
+    <div class="sw" id="sw"></div>
+    <button class="lo" id="party" type="button">Modo fiesta</button><button class="lo" id="snd" type="button">Sonidos: no</button><button class="lo" id="exp" type="button">Exportar mis datos</button><button class="lo" id="impb" type="button">Importar datos</button><input type="file" id="imp" accept=".json" hidden><button class="lo" id="rst" type="button">Borrar mis datos</button>
+  </section>
+  <section class="card spot reveal">
+    <div class="ct"><h2>Posibilidades</h2><span>Por categoría</span></div>
+    <div id="cmb"></div>
+  </section>
+  <section class="card spot reveal">
+    <div class="ct"><h2>Novedades</h2><span>Versiones</span></div>
+    <div class="tl">
+      <div><b>v5.0 · Premium y herramientas</b><span>Plan Premium, analizador, variaciones, contraseñas, logros y copia de datos.</span></div>
+      <div><b>v4.0 · Portada y detalles</b><span>Portada animada, posibilidades, novedades y pantalla de carga renovada.</span></div>
+      <div><b>v3.0 · Animaciones</b><span>Estela, ondas, modo fiesta y sonidos.</span></div>
+      <div><b>v2.0 · Herramientas</b><span>Patrones, historial y favoritos.</span></div>
+      <div><b>v1.0 · Lanzamiento</b><span>Generador de usernames con categorías 5C a 2C.</span></div>
+    </div>
+  </section>
+  <section class="card spot reveal">
+    <div class="ct"><h2>Logros</h2><span id="achC">0/7</span></div>
+    <div class="ach-g" id="ach"></div>
   </section>
 </aside>
 </div>
-<footer>Frontend Developer By <b>Rotwm</b></footer>
+<footer><div class="ft"><div><b style="font-size:20px">Rotwm</b><p>Generador de usernames cortos, con herramientas para crear, analizar y guardar tus nombres.</p></div>
+<div><h4>Secciones</h4><a href="#inicio">Inicio</a><a href="#premium">Premium</a><a href="#faq">Preguntas</a></div>
+<div><h4>Contacto</h4><a href="#contrataciones">Discord: 0y2l</a><a href="#info">Información</a></div></div>
+<div class="ftb">Frontend Developer By <b>Rotwm</b></div></footer>
 </div>
 
+<div class="modal" id="pay"><div class="mc ring">
+  <h2>Comprar Premium</h2>
+  <p>Premium 3 días: 0.49 USD. Premium permanente: 1.99 USD. Escríbeme por Discord a <b>0y2l</b>, realiza el pago y recibirás tu código de activación.</p>
+  <input class="ai" id="pCode" style="padding-right:14px;margin-bottom:10px" placeholder="Pega aquí tu código" autocomplete="off" spellcheck="false">
+  <button id="pAct" type="button">Activar Premium</button>
+  <button id="pX" type="button" style="margin-top:8px;background:#151518;color:#fff;border:1px solid #333">Cerrar</button>
+</div></div>
+<button id="up" type="button" aria-label="Subir"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
 <div class="modal" id="modal">
   <div class="mc ring">
     <svg viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>
     <h2>Premium requerido</h2>
     <p>Las categorías 3C y 2C están reservadas para usuarios con acceso Premium.</p>
-    <button id="mx" type="button">Entendido</button>
+    <button id="mx" type="button">Entendido</button><button id="mp" type="button" style="margin-top:8px;background:#151518;color:#fff;border:1px solid #333">Ver planes</button>
   </div>
 </div>
 
@@ -292,7 +496,7 @@ body.loading{overflow:hidden}
 "use strict";
 const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
 const reduce=matchMedia("(prefers-reduced-motion:reduce)").matches;
-const CHARS="abcdefghijklmnopqrstuvwxyz0123456789._";
+const CHARS="abcdefghijklmnopqrstuvwxyz0123456789._";let CH=CHARS;
 const CATS={"5C":{len:5,n:5,cd:15*6e4,prem:false},"4C":{len:4,n:3,cd:30*6e4,prem:false},"3C":{len:3,n:2,cd:0,prem:true},"2C":{len:2,n:1,cd:0,prem:true}};
 const ADMINS=Object.freeze({"@782":{rank:"OWNER",name:"Owner"},"@000":{rank:"ADMIN",name:"Admin"}});
 const A=[10,20,50,100];
@@ -301,7 +505,7 @@ const NOTES={OWNER:"Acceso completo: 10, 20, 50 o 100 usernames por categoría."
 
 const load=(k,f)=>{try{return JSON.parse(localStorage.getItem(k))??f}catch{return f}};
 const save=(k,v)=>{try{localStorage.setItem(k,JSON.stringify(v))}catch{}};
-let user="User",rank="USER",premium=false,sel="5C",isBusy=false;
+let user="User",rank="USER",premium=load("rotwm_prem",false)===true||load("rotwm_p3",0)>Date.now(),sel="5C",isBusy=false;
 let cds=load("rotwm_cd",{}),st=load("rotwm_stats",{generated:0,sessions:0,"5C":0,"4C":0});
 
 const rnd=n=>crypto.getRandomValues(new Uint32Array(1))[0]%n;
@@ -311,10 +515,10 @@ const pad=n=>String(n).padStart(2,"0");
 const fmt=ms=>{const s=Math.ceil(ms/1e3),h=Math.floor(s/3600);return(h?pad(h)+":":"")+pad(Math.floor(s%3600/60))+":"+pad(s%60)};
 const pop=el=>{el.classList.remove("pop");void el.offsetWidth;el.classList.add("pop")};
 
-function mk(len){let s="";while(s.length<len){const c=CHARS[rnd(CHARS.length)];if(s.length>1&&s.at(-1)===c&&s.at(-2)===c)continue;s+=c}return s}
-function uniq(len,n){const set=new Set,max=Math.min(n,CHARS.length**len);while(set.size<max)set.add(mk(len));return[...set]}
+function mk(len){let s="";while(s.length<len){const c=CH[rnd(CH.length)];if(s.length>1&&s.at(-1)===c&&s.at(-2)===c)continue;s+=c}return s}
+function uniq(len,n){const set=new Set,max=Math.min(n,CH.length**len);while(set.size<max)set.add(mk(len));return[...set]}
 
-function toast(t,type=""){const box=$("#toasts"),d=document.createElement("div");d.className="toast "+type;d.textContent=t;box.append(d);while(box.children.length>3)box.firstChild.remove();setTimeout(()=>{d.classList.add("out");setTimeout(()=>d.remove(),350)},2800)}
+function toast(t,type=""){beep(type==="err"?200:740);const box=$("#toasts"),d=document.createElement("div");d.className="toast "+type;d.textContent=t;box.append(d);while(box.children.length>3)box.firstChild.remove();setTimeout(()=>{d.classList.add("out");setTimeout(()=>d.remove(),350)},2800)}
 
 function count(el,to){const from=+el.textContent||0;if(reduce||from===to){el.textContent=to;return}const t0=performance.now();(function f(t){const p=Math.min(1,(t-t0)/800);el.textContent=Math.round(from+(to-from)*(1-(1-p)**3));if(p<1)requestAnimationFrame(f)})(t0)}
 function stats(){[["#sG","generated"],["#sS","sessions"],["#s5","5C"],["#s4","4C"]].forEach(([i,k])=>count($(i),st[k]||0))}
@@ -361,7 +565,7 @@ function gen(){
     const names=uniq(c.len,c.n);
     if(c.cd){cds[k]=Date.now();save("rotwm_cd",cds)}
     st.generated+=names.length;if(k in st)st[k]+=names.length;save("rotwm_stats",st);
-    show(names);burst();stats();
+    show(names);hist(names,k);burst();stats();
     isBusy=false;g.classList.remove("busy");cdUI();
     toast(`${names.length} username${names.length>1?"s generados":" generado"}.`,"ok");
   },reduce?0:700);
@@ -376,8 +580,8 @@ function show(names){
   const box=$("#res");box.innerHTML="";
   names.forEach((n,i)=>{
     const d=document.createElement("div");d.className="res";d.style.setProperty("--i",i);
-    d.innerHTML=`<div class="nm hid"></div><div class="ra"><button class="sb" type="button">Revelar</button><button class="sb" type="button">Copiar</button></div>`;
-    const nm=d.firstChild,[rv,cp]=d.querySelectorAll("button");nm.textContent=mk(n.length);
+    d.innerHTML=`<div class="nm hid"></div><div class="ra"><span class="tag"></span><button class="sb" type="button">Revelar</button><button class="sb" type="button">Copiar</button><button class="sb" type="button" aria-label="Favorito">Guardar</button></div>`;
+    const nm=d.firstChild,[rv,cp,fv]=d.querySelectorAll("button");nm.textContent=mk(n.length);const tg=d.querySelector(".tag");tg.textContent=rar(n);if(tg.textContent==="Palíndromo")tg.style.color="var(--gold)";const sf=()=>{const f=favs.includes(n);fv.textContent=f?"Guardado":"Guardar";fv.classList.toggle("fav",f)};sf();fv.onclick=()=>{toggleFav(n);sf()};
     rv.onclick=()=>{
       if(nm.classList.contains("hid")){nm.classList.remove("hid");rv.textContent="Ocultar";scr(nm,n)}
       else{nm.classList.add("hid");rv.textContent="Revelar";setTimeout(()=>{if(nm.classList.contains("hid"))nm.textContent=mk(n.length)},400)}
@@ -498,17 +702,225 @@ $("#dcCopy").onclick=async e=>{
   b.textContent="Copiado";b.classList.add("ok");setTimeout(()=>{b.textContent="Copiar usuario";b.classList.remove("ok")},1500);
 };
 
+/* ===== extras ===== */
+const SETS={l:"abcdefghijklmnopqrstuvwxyz",n:"0123456789",s:"._"};
+let opt=load("rotwm_opt",{l:1,n:1,s:1}),hist_=load("rotwm_hist",[]),favs=load("rotwm_fav",[]),cur=[];
+const setCH=()=>{CH=Object.keys(SETS).filter(k=>opt[k]).map(k=>SETS[k]).join("")};
+$$("#opts input").forEach(i=>{i.checked=!!opt[i.dataset.o];i.onchange=()=>{
+  opt[i.dataset.o]=i.checked?1:0;
+  if(!opt.l&&!opt.n){opt.l=1;$('#opts [data-o="l"]').checked=true;toast("Necesitas letras o números.","err")}
+  save("rotwm_opt",opt);setCH()}});
+setCH();
+
+function row(n,k,box,rm){
+  const d=document.createElement("div");d.className="li";
+  d.innerHTML='<span></span><div class="ra"><button class="sb" type="button">Copiar</button><button class="sb" type="button">Quitar</button></div>';
+  d.firstChild.textContent=n+(k?" · "+k:"");
+  const[c,x]=d.querySelectorAll("button");
+  c.onclick=async()=>{const ok=await copyText(n);toast(ok?"Copiado: "+n:"No se pudo copiar.",ok?"ok":"err")};
+  if(rm)x.onclick=()=>rm(n);else x.remove();
+  box.append(d);
+}
+function lists(){
+  const h=$("#hList"),f=$("#fList");h.innerHTML=f.innerHTML="";
+  hist_.forEach(([n,k])=>row(n,k,h,x=>{hist_=hist_.filter(e=>e[0]!==x);save("rotwm_hist",hist_);lists()}));
+  favs.forEach(n=>row(n,"",f,x=>{favs=favs.filter(e=>e!==x);save("rotwm_fav",favs);lists()}));
+  if(!hist_.length)h.innerHTML='<p class="empty">Aún no has generado nada.</p>';
+  if(!favs.length)f.innerHTML='<p class="empty">Pulsa Guardar en un resultado.</p>';
+}
+function hist(names,k){cur=names;$("#tools").hidden=false;hist_=[...names.map(n=>[n,k]),...hist_].slice(0,50);save("rotwm_hist",hist_);lists()}
+function toggleFav(n){if(!favs.includes(n))boom(px,py,26);favs=favs.includes(n)?favs.filter(e=>e!==n):[n,...favs].slice(0,100);save("rotwm_fav",favs);lists()}
+
+function dl(arr,name){const a=document.createElement("a");a.href=URL.createObjectURL(new Blob([arr.join("\n")],{type:"text/plain"}));a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1e3)}
+$("#cpAll").onclick=async()=>{const ok=await copyText(cur.join("\n"));toast(ok?"Todos copiados.":"No se pudo copiar.",ok?"ok":"err")};
+$("#dlAll").onclick=()=>dl(cur,"rotwm-usernames.txt");
+$("#dlHist").onclick=()=>hist_.length?dl(hist_.map(e=>e[0]),"rotwm-historial.txt"):toast("El historial está vacío.","err");
+$("#clHist").onclick=()=>{hist_=[];save("rotwm_hist",hist_);lists()};
+
+/* patrones */
+const PT={c:"bcdfghjklmnpqrstvwxyz",v:"aeiou",d:"0123456789",l:SETS.l,x:CHARS};
+function pat(){
+  const i=$("#pIn"),p=i.value.trim().toLowerCase();
+  if(!/^[a-z0-9._]{2,12}$/.test(p)){i.classList.remove("shake");void i.offsetWidth;i.classList.add("shake");return toast("Usa de 2 a 12 caracteres: c v d l x . _ letras o números","err")}
+  if(p.length<4&&!hasPrem())return openModal();
+  const s=new Set;
+  for(let t=0;t<300&&s.size<8;t++)s.add([...p].map(ch=>PT[ch]?PT[ch][rnd(PT[ch].length)]:ch).join(""));
+  save("rotwm_pat",load("rotwm_pat",0)+1);const o=$("#pOut");o.innerHTML="";[...s].forEach(n=>row(n,"",o));
+  toast(s.size+" username"+(s.size>1?"s":"")+" por patrón.","ok");
+}
+$("#pGo").onclick=pat;$("#pIn").onkeydown=e=>{if(e.key==="Enter")pat()};
+
+/* acento, reinicio, atajos y subir */
+const ACC=["#ffc400","#5be39a","#6ea8ff","#ff6aa8","#b388ff"],root=document.documentElement;
+ACC.forEach(c=>{const i=document.createElement("i");i.style.background=c;i.title=c;i.onclick=()=>{root.style.setProperty("--gold",c);save("rotwm_acc",c)};$("#sw").append(i)});
+const acc=load("rotwm_acc",null);if(acc)root.style.setProperty("--gold",acc);
+$("#rst").onclick=()=>{if(confirm("¿Borrar historial, favoritos, estadísticas y ajustes?")){["stats","hist","fav","opt","acc","snd"].forEach(k=>{try{localStorage.removeItem("rotwm_"+k)}catch{}});location.reload()}};
+addEventListener("keydown",e=>{
+  if(e.target.closest?.("input,textarea")||e.ctrlKey||e.metaKey||e.altKey)return;
+  const k=e.key.toLowerCase();
+  if(k==="g"&&!$("#go").disabled)$("#go").click();
+  else if(/^[1-4]$/.test(k))$$(".cat")[+k-1]?.click();
+});
+addEventListener("scroll",()=>$("#up").classList.toggle("show",scrollY>500),{passive:true});
+$("#up").onclick=()=>scrollTo({top:0});
+lists();
+
+/* ===== animaciones y extras 2 ===== */
+let px=0,py=0,snd=load("rotwm_snd",0),ac_;
+function beep(f=660,d=.08){if(!snd)return;try{ac_=ac_||new AudioContext();const o=ac_.createOscillator(),g=ac_.createGain();o.frequency.value=f;g.gain.value=.04;o.connect(g);g.connect(ac_.destination);o.start();g.gain.exponentialRampToValueAtTime(.0001,ac_.currentTime+d);o.stop(ac_.currentTime+d)}catch{}}
+const rar=n=>n===[...n].reverse().join("")?"Palíndromo":/^\d+$/.test(n)?"Números":/^[a-z]+$/.test(n)?"Letras":/[._]/.test(n)?"Símbolo":"Mixto";
+function boom(x,y,n=30){if(reduce)return;for(let i=0;i<n;i++){const a=Math.random()*6.28,v=Math.random()*5+2;sparks.push({x,y,vx:Math.cos(a)*v,vy:Math.sin(a)*v-2,l:1,c:Math.random()<.5?"255,196,0":"255,255,255"})}}
+const boomEl=el=>{const b=el.getBoundingClientRect();boom(b.left+b.width/2,b.top+b.height/2)};
+const bgEl=$(".bg"),root2=document.documentElement;
+
+/* ratón: estela, parallax y botones magnéticos */
+document.addEventListener("pointermove",e=>{
+  px=e.clientX;py=e.clientY;if(reduce)return;
+  if(sparks.length<300&&Math.random()<.5)sparks.push({x:px,y:py,vx:Math.random()-.5,vy:Math.random()-.8,l:.6,c:"255,196,0"});
+  bgEl.style.setProperty("--px",px/innerWidth-.5);bgEl.style.setProperty("--py",py/innerHeight-.5);
+  const m=e.target.closest?.(".go,.ab,.logo");
+  $$(".mag").forEach(x=>{if(x!==m){x.style.translate="";x.classList.remove("mag")}});
+  if(!m)return;const r=m.getBoundingClientRect();m.classList.add("mag");
+  m.style.translate=`${(px-r.left-r.width/2)*.15}px ${(py-r.top-r.height/2)*.25}px`;
+});
+addEventListener("pointerdown",e=>{if(reduce)return;const w=document.createElement("i");w.className="wave";w.style.cssText=`left:${e.clientX}px;top:${e.clientY}px`;document.body.append(w);setTimeout(()=>w.remove(),700)});
+addEventListener("scroll",()=>$("#prog").style.setProperty("--p",scrollY/Math.max(1,root2.scrollHeight-innerHeight)),{passive:true});
+
+/* logo y título */
+$(".logo").onclick=e=>{const l=e.currentTarget;l.classList.remove("spin");void l.offsetWidth;l.classList.add("spin");boomEl(l);beep(520)};
+let h1b=0;$("h1").onmouseenter=()=>{if(reduce||h1b)return;h1b=1;const el=$("h1"),f="Rotwm";let i=0;const t=setInterval(()=>{el.textContent=[...f].map((c,k)=>k<i?c:CHARS[rnd(CHARS.length)]).join("");if(++i>f.length){clearInterval(t);el.textContent=f;h1b=0}},60)};
+
+/* modo fiesta y sonidos */
+let pt;$("#party").onclick=()=>{const on=root2.classList.toggle("party");clearInterval(pt);if(on&&!reduce)pt=setInterval(()=>boom(Math.random()*W,Math.random()*H*.6,18),700);toast(on?"Modo fiesta activado":"Modo fiesta desactivado","ok")};
+const sndT=()=>{$("#snd").textContent="Sonidos: "+(snd?"sí":"no")};sndT();
+$("#snd").onclick=()=>{snd=snd?0:1;save("rotwm_snd",snd);sndT();beep(880)};
+
+/* ===== version 4: portada, carga, cursor ===== */
+(function(){
+  const t0=performance.now(),D=2600,M=["Iniciando el sistema","Cargando categorías","Preparando el generador","Afinando animaciones","Casi listo"];
+  $("#lw").innerHTML=[..."ROTWM"].map((c,i)=>`<span style="--i:${i}">${c}</span>`).join("");
+  (function f(){const p=Math.min(1,(performance.now()-t0)/D),v=Math.round((1-(1-p)**2.2)*100),b=$("#lbi");
+    if(!b)return;b.style.setProperty("--w",v+"%");$("#lpc").textContent=v+"%";$("#lmsg").textContent=M[Math.min(M.length-1,Math.floor(p*M.length))];
+    if(p<1)requestAnimationFrame(f)})();
+})();
+function kpis(){count($("#k1"),79);count($("#k2"),4);count($("#k3"),100)}
+$("#hGo").onclick=()=>$("#go").scrollIntoView({behavior:"smooth",block:"center"});
+$("#hRl").onclick=()=>$("#premium").scrollIntoView({behavior:"smooth",block:"center"});
+const HW=["cortos","únicos","rápidos","aleatorios","a tu estilo"];let hi=0;
+setInterval(()=>{const e=$("#hw");e.classList.add("out");setTimeout(()=>{hi=(hi+1)%HW.length;e.textContent=HW[hi];e.classList.remove("out")},350)},2400);
+const mqN=Array.from({length:20},()=>mk(2+rnd(4)));
+$("#mt").innerHTML=[...mqN,...mqN].map(n=>`<span>${n}</span>`).join("");
+
+function combos(){
+  const box=$("#cmb");
+  if(!box.children.length)Object.keys(CATS).forEach(k=>{const d=document.createElement("div");d.className="cd";d.innerHTML=`<div class="cdh"><b>${k}</b><span></span></div><div class="bar" style="margin-top:8px"><i></i></div>`;box.append(d)});
+  Object.entries(CATS).forEach(([k,c],i)=>{const d=box.children[i],t=CH.length**c.len;
+    d.querySelector("span").textContent=t.toLocaleString("es");
+    d.querySelector("i").style.width=Math.max(4,Math.log10(t)/Math.log10(CH.length**5)*100)+"%"});
+}
+combos();$$("#opts input").forEach(i=>i.addEventListener("change",combos));
+setInterval(()=>{$("#sF").textContent=favs.length;const t=Math.floor(performance.now()/1e3);$("#sT").textContent=pad(Math.floor(t/60))+":"+pad(t%60)},1000);
+
+if(!reduce&&matchMedia("(pointer:fine)").matches){
+  const c=$("#cur");let ax=0,ay=0;
+  (function f(){ax+=(px-ax)*.18;ay+=(py-ay)*.18;c.style.transform=`translate(${ax}px,${ay}px)`;c.style.opacity=px?1:0;requestAnimationFrame(f)})();
+  document.addEventListener("pointermove",e=>document.body.classList.toggle("hov",!!e.target.closest?.("button,a,input,.cat,summary")));
+}
+
+/* ===== version 5: premium y herramientas ===== */
+const PERM=new Set(["nmpiycwt9a", "1rqeqgimen9", "lo2dn6muwk", "5d6nylpmi9", "mpl3ljsc3"]),DAY=new Set(["8k446ddod9", "1n0m36rrp88", "21goxt8jwjf", "1k2zwq60nzl", "1rk1w9wxvyn"]);
+const HS=s=>{let h1=0xdeadbeef,h2=0x41c6ce57;for(let i=0;i<s.length;i++){const c=s.charCodeAt(i);h1=Math.imul(h1^c,2654435761);h2=Math.imul(h2^c,1597334677)}h1=Math.imul(h1^(h1>>>16),2246822507)^Math.imul(h2^(h2>>>13),3266489909);h2=Math.imul(h2^(h2>>>16),2246822507)^Math.imul(h1^(h1>>>13),3266489909);return(4294967296*(2097151&h2)+(h1>>>0)).toString(36)};
+const norm=c=>c.toUpperCase().replace(/[^A-Z0-9]/g,"");
+const pay=$("#pay"),closePay=()=>pay.classList.remove("show");
+const left=()=>Math.max(0,load("rotwm_p3",0)-Date.now());
+const isPerm=()=>load("rotwm_prem",false)===true;
+function fmtL(ms){const s=Math.floor(ms/1e3),d=Math.floor(s/86400),h=Math.floor(s%86400/3600),m=Math.floor(s%3600/60);return(d?d+"d ":"")+pad(h)+"h "+pad(m)+"m "+pad(s%60)+"s"}
+function prem(){
+  const perm=isPerm(),t=left()>0,p=hasPrem();
+  $("#plS").textContent=perm?"Premium permanente":t?"Premium 3 días · "+fmtL(left()):p?"Acceso Owner":"Gratis";
+  $("#buy").disabled=$("#buy3").disabled=perm;
+  $("#buy").textContent=perm?"Premium activo":"Comprar permanente";
+  $("#buy3").textContent=perm?"No necesario":t?"Extender 3 días":"Comprar 3 días";
+  $$(".cat.prem .tag").forEach(x=>x.textContent=p?"ACTIVO":"PREMIUM");
+}
+$("#buy").onclick=$("#buy3").onclick=()=>pay.classList.add("show");
+$("#pX").onclick=closePay;pay.onclick=e=>{if(e.target===pay)closePay()};
+addEventListener("keydown",e=>{if(e.key==="Escape")closePay()});
+$("#mp").onclick=()=>{closeModal();$("#premium").scrollIntoView({behavior:"smooth",block:"center"})};
+$("#pAct").onclick=()=>{
+  const i=$("#pCode"),h=HS(norm(i.value)),used=load("rotwm_used",[]);
+  const bad=m=>{i.classList.remove("shake");void i.offsetWidth;i.classList.add("shake");toast(m,"err")};
+  const kind=PERM.has(h)?"p":DAY.has(h)?"d":"";
+  if(!kind)return bad("Código no válido.");
+  if(used.includes(h))return bad("Este código ya fue usado.");
+  if(isPerm())return bad("Ya tienes Premium permanente.");
+  if(kind==="p"){premium=true;save("rotwm_prem",true);try{localStorage.removeItem("rotwm_p3")}catch{}}
+  else{save("rotwm_p3",Math.max(Date.now(),load("rotwm_p3",0))+3*864e5);premium=true}
+  save("rotwm_used",[...used,h]);closePay();i.value="";acct();cdUI();ui();prem();
+  toast(kind==="p"?"Premium permanente activado.":"Premium de 3 días activado.","ok");boomEl($("#premium"));
+};
+setInterval(()=>{
+  if(!isPerm()&&premium&&left()<=0){premium=false;try{localStorage.removeItem("rotwm_p3")}catch{}toast("Tu Premium de 3 días ha terminado.","err");acct();cdUI();ui()}
+  prem();
+},1000);
+prem();
+
+/* analizador */
+$("#aIn").oninput=e=>{
+  const v=e.target.value.toLowerCase().replace(/[^a-z0-9._]/g,"");e.target.value=v;
+  const L=(v.match(/[a-z]/g)||[]).length,N=(v.match(/\d/g)||[]).length,S=v.length-L-N;
+  $("#m1").textContent=v.length;$("#m2").textContent=v.length>=2&&v.length<=5?v.length+"C":"-";
+  $("#m3").textContent=v?rar(v):"-";$("#m4").textContent=L;$("#m5").textContent=N;$("#m6").textContent=S;
+  const sc=v.length<2?0:Math.min(100,Math.max(0,100-(v.length-2)*18)+S*6+(v===[...v].reverse().join("")?15:0));
+  $("#m7").textContent=sc;$("#m8").style.width=sc+"%";if(v.length>=2)save("rotwm_an",1);
+};
+
+/* variaciones */
+$("#vIn").oninput=e=>{
+  const v=e.target.value.toLowerCase().replace(/[^a-z0-9._]/g,"");e.target.value=v;
+  const o=$("#vOut");o.innerHTML="";if(!v)return;
+  const leet=[...v].map(c=>({a:"4",e:"3",i:"1",o:"0",s:"5",t:"7"}[c]||c)).join("");
+  new Set([leet,[...v].join("_"),[...v].join("."),[...v].reverse().join(""),v.replace(/[aeiou]/g,""),v+v,"x"+v+"x","_"+v+"_",v+"."+rnd(100)]).forEach(n=>n&&n!==v&&row(n,"",o));
+};
+
+/* contraseñas */
+const PW={a:"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789",s:"!@#$%&*?-_+="};
+function pw(){
+  const n=+$("#pwR").value,pool=PW.a+($("#pwS").checked?PW.s:"");
+  $("#pwL").textContent=n+" caracteres";
+  $("#pwO").textContent=Array.from({length:n},()=>pool[rnd(pool.length)]).join("");
+  const bits=n*Math.log2(pool.length),lv=bits<50?"Baja":bits<80?"Media":bits<110?"Alta":"Muy alta";
+  $("#pwT").textContent=lv+" ("+Math.round(bits)+" bits)";$("#pwB").style.width=Math.min(100,bits/1.4)+"%";
+}
+$("#pwR").oninput=pw;$("#pwS").onchange=pw;$("#pwG").onclick=pw;
+$("#pwC").onclick=async()=>{const ok=await copyText($("#pwO").textContent);toast(ok?"Contraseña copiada.":"No se pudo copiar.",ok?"ok":"err")};
+pw();
+
+/* logros */
+const ACH=[["Primera generación",()=>st.generated>=1],["10 usernames",()=>st.generated>=10],["50 usernames",()=>st.generated>=50],["Primer favorito",()=>favs.length>=1],["Primer patrón",()=>load("rotwm_pat",0)>0],["Analizaste un nombre",()=>load("rotwm_an",0)>0],["Premium activo",()=>hasPrem()]];
+let got=load("rotwm_ach",[]);
+const achEl=ACH.map(([n])=>{const d=document.createElement("div");d.className="ach"+(got.includes(n)?" on":"");d.textContent=n;$("#ach").append(d);return d});
+function ach(){ACH.forEach(([n,f],i)=>{if(!got.includes(n)&&f()){got.push(n);save("rotwm_ach",got);achEl[i].classList.add("on");toast("Logro desbloqueado: "+n,"ok");boom(px,py,30)}});$("#achC").textContent=got.length+"/"+ACH.length}
+setInterval(ach,1000);ach();
+$$("#ach .ach").forEach(()=>{});
+
+/* copia de datos */
+const BK=["stats","hist","fav","opt","acc","ach"];
+$("#exp").onclick=()=>{const o={};BK.forEach(k=>o[k]=load("rotwm_"+k,null));dl([JSON.stringify(o)],"rotwm-copia.json");toast("Copia exportada.","ok")};
+$("#impb").onclick=()=>$("#imp").click();
+$("#imp").onchange=e=>{const f=e.target.files[0];if(!f)return;f.text().then(t=>{try{const o=JSON.parse(t);BK.forEach(k=>{if(o[k]!=null)save("rotwm_"+k,o[k])});location.reload()}catch{toast("Archivo no válido.","err")}})};
+
 /* inicio y pantalla de carga */
 acct();ui();cdUI();
 $$(".stat strong").forEach(e=>e.textContent="0");
 function start(){
-  typeText($("#tl"),"Generador de usernames cortos");
+  typeText($("#tl"),"Generador de usernames cortos");kpis();
   $$(".reveal").forEach((el,i)=>{el.style.setProperty("--d",Math.min(i,4)*.1+"s");io.observe(el)});
   stats();
 }
 const ldr=$("#loader"),tStart=performance.now();
 function finish(){
-  setTimeout(()=>{ldr.classList.add("out");document.body.classList.remove("loading");start();setTimeout(()=>ldr.remove(),900)},reduce?0:Math.max(0,1100-(performance.now()-tStart)));
+  setTimeout(()=>{ldr.classList.add("out");document.body.classList.remove("loading");start();setTimeout(()=>ldr.remove(),900)},reduce?0:Math.max(0,2800-(performance.now()-tStart)));
 }
 document.readyState==="complete"?finish():addEventListener("load",finish,{once:true});
 </script>
